@@ -1,0 +1,59 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "300 2006",
+      "year": 2006,
+      "description": "300 is a 2006 American low fantasy epic war film based on the 1998 comic series of the same name by Frank Miller and Lynn Varley. Both are fictionalized retellings of the Battle of Thermopylae within the Persian Wars.",
+      "rating": "7.7",
+      "gener": 1,
+      "language": "En",
+      "quality": "3",
+      "photoPath": "assets/images/m300.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Avatar 2009",
+      "year": 2009,
+      "description": "Avatar is a science fiction film written and directed by James Cameron, starring Sam Worthington, Zoë Saldaña, Stephen Lang, Michelle Rodriguez, and Sigourney Weaver. It was made by Lightstorm Entertainment and released by 20th Century Fox on December 18, 2009.",
+      "rating": "7.8",
+      "gener": 8,
+      "language": "En",
+      "quality": 2,
+      "photoPath": "assets/images/mavatar.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Fury 2015",
+      "year": 2015,
+      "description": "Fury is a 2014 American war film written and directed by David Ayer, and starring Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peña, Jon Bernthal, and Jason Isaacs. The film portrays US tank crews in Nazi Germany during the final days of World War II.",
+      "rating": "7.6",
+      "gener": 24,
+      "language": "En",
+      "quality": 3,
+      "photoPath": "assets/images/mfury.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Harry Potter and the Chamber of Secrets 2002",
+      "year": "2002",
+      "description": "An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.",
+      "rating": "7.4",
+      "gener": "10",
+      "language": "En",
+      "quality": "1",
+      "photoPath": "assets/images/mharry.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Harry Potter and the Chamber of Secrets 2002gdgd",
+      "year": "2002",
+      "description": "hf",
+      "rating": "7.4",
+      "gener": "19",
+      "language": "En",
+      "quality": "1",
+      "photoPath": "assets/images/mharry.jpg"
+    }
+  ]
+}

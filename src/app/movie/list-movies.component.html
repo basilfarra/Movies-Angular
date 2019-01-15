@@ -1,0 +1,9 @@
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search By Title"
+            style="width:50%" [(ngModel)]="searchTerm" @fade />
+</div>
+<div *ngFor="let movie of filteredMovies" @show>
+  <app-display-movie [movie]="movie"
+   [searchTerm]="searchTerm"
+   (notifyDelete)="onDeleteNotification($event)"></app-display-movie>
+</div>

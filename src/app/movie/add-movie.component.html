@@ -1,0 +1,112 @@
+<form #movieForm="ngForm"
+      (ngSubmit)="saveMovie(movieForm); movieForm.reset()">
+<div class="panel panel-primary" *ngIf="movie">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{panelTitle}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group"
+        [class.has-error]="title.invalid && title.touched"
+        [class.has-success]="title.valid">
+        <label for="title" class="control-label">Title</label>
+        <input placeholder="Title" id="title" required type="text" class="form-control" name="title"
+               [(ngModel)]="movie.title" #title="ngModel">
+        <span class="help-block" *ngIf="title.invalid && title.touched">
+            Title is required
+        </span>
+      </div>
+      <div class="form-group"
+      [class.has-error]="year.invalid && year.touched"
+      [class.has-success]="year.valid">
+        <label for="year" class="control-label">Year</label>
+        <input placeholder="Year" id="year" required type="text" class="form-control" name="year"
+               [(ngModel)]="movie.year" #year="ngModel">
+        <span class="help-block" *ngIf="year.invalid && year.touched">
+            Year is required
+        </span>
+      </div>
+      <div class="form-group"
+      [class.has-error]="rating.invalid && rating.touched"
+      [class.has-success]="rating.valid">
+        <label for="rating" class="control-label">Rating</label>
+        <input placeholder="Rating" id="rating" required type="text" class="form-control" name="rating"
+               [(ngModel)]="movie.rating" #rating="ngModel">
+        <span class="help-block" *ngIf="rating.invalid && rating.touched">
+          Rating is required
+        </span>
+      </div>
+      <div class="form-group" 
+      [class.has-error]="language.invalid && language.touched"
+      [class.has-success]="language.valid">
+          <label class="control-label">Language</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" name="language" required #language="ngModel"
+                     value="Ar" [(ngModel)]="movie.language"> Ar
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="language" required #language="ngModel"
+                     value="En" [(ngModel)]="movie.language"> En
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="language" required #language="ngModel"
+                      value="Others" [(ngModel)]="movie.language"> Others
+            </label>
+          </div>
+          <span class="help-block" *ngIf="language.invalid && language.touched">
+              Language is required
+          </span>
+      </div>
+      <div class="form-group"
+          [class.has-error]="quality.touched && quality.invalid">
+        <label for="quality" class="control-label">Quality</label>
+        <select id="quality" required #quality="ngModel"
+                name="quality" [(ngModel)]="movie.quality"
+                class="form-control">
+          <option disabled [ngValue]="null">Select Quality</option>
+          <option *ngFor="let qual of qualities" [value]="qual.id">
+            {{qual.name}}
+          </option>
+        </select>
+        <span class="help-block"
+              *ngIf="quality.touched && quality.invalid">
+              Quality is required
+        </span>
+      </div>
+      <div class="form-group"
+          [class.has-error]="gener.touched && gener.invalid">
+        <label for="gener" class="control-label">Gener</label>
+        <select id="gener" required #gener="ngModel"
+                name="gener" [(ngModel)]="movie.gener"
+                class="form-control">
+          <option disabled [ngValue]="null">Select Gener</option>
+          <option *ngFor="let gen of geners" [value]="gen.id">
+            {{gen.name}}
+          </option>
+        </select>
+        <span class="help-block"
+              *ngIf="gener.touched && gener.invalid">
+              Gener is required
+        </span>
+      </div>
+      <div class="form-group"
+      [class.has-error]="description.invalid && description.touched"
+      [class.has-success]="description.valid">
+        <label for="description" class="control-label">Description</label>
+        <textarea placeholder="Description" name="description" required id="description" class="form-control" 
+        [(ngModel)]="movie.description" cols="30" rows="10" #description="ngModel"></textarea>
+        <span class="help-block" *ngIf="description.invalid && description.touched">
+          Description is required
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="photoPath">Photo Path</label>
+        <input id="photoPath" type="text" class="form-control"
+                name="photoPath" [(ngModel)]="movie.photoPath">
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button class="btn btn-success" type="submit">Save</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,105 @@
+<div class="panel panel-primary" [class.panel-success]="selectedMovieId === movie.id">
+<div class="panel-heading pointerCursor" (click)="panelExpanded = !panelExpanded">
+  <h3 class="panel-title">{{movie.title | uppercase}}</h3>
+</div>
+<div class="panel-body" *ngIf="panelExpanded">
+  <div class="col-md-12">
+    <div class="row vertical-align">
+      <div class="col-md-8 bodystyle">
+        <div class="row">
+          <div class="col-md-4">
+            Year
+          </div>
+          <div class="col-md-8">
+            : {{movie.year}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            Rating
+          </div>
+          <div class="col-md-8">
+            : {{movie.rating}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            Gener
+          </div>
+          <div class="col-md-8" [ngSwitch]="movie.gener">
+              :     <span *ngSwitchCase="1"> Action </span>
+                    <span *ngSwitchCase="2"> Adventure </span>
+                    <span *ngSwitchCase="3"> Animation </span>
+                    <span *ngSwitchCase="4"> Biography </span>
+                    <span *ngSwitchCase="5"> Comedy </span>
+                    <span *ngSwitchCase="6"> Crime </span>
+                    <span *ngSwitchCase="7"> Documentary </span>
+                    <span *ngSwitchCase="8"> Drama </span>
+                    <span *ngSwitchCase="9"> Family </span>
+                    <span *ngSwitchCase="10"> Fantasy </span>
+                    <span *ngSwitchCase="11"> Film-Noir </span>
+                    <span *ngSwitchCase="12"> Game-Show </span>
+                    <span *ngSwitchCase="13"> History </span>
+                    <span *ngSwitchCase="14"> Horror </span>
+                    <span *ngSwitchCase="15"> Music </span>
+                    <span *ngSwitchCase="16"> Musical </span>
+                    <span *ngSwitchCase="17"> Mystery </span>
+                    <span *ngSwitchCase="18"> News </span>
+                    <span *ngSwitchCase="19"> Reality-TV </span>
+                    <span *ngSwitchCase="20"> Romance </span>
+                    <span *ngSwitchCase="21"> Sci-Fi </span>
+                    <span *ngSwitchCase="22"> Sport </span>
+                    <span *ngSwitchCase="23"> Talk-Show </span>
+                    <span *ngSwitchCase="24"> Thriller </span>
+                    <span *ngSwitchCase="25"> War </span>
+                    <span *ngSwitchCase="26"> Western </span>
+                    <span *ngSwitchDefault> N/A </span>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            Language
+          </div>
+          <div class="col-md-8">
+            : {{movie.language}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            Quality Video
+          </div>
+          <div class="col-md-8" [ngSwitch]="movie.quality">
+            :     <span *ngSwitchCase="1"> 1080p </span>
+                  <span *ngSwitchCase="2"> 720p </span>
+                  <span *ngSwitchCase="3"> 3D </span>
+                  <span *ngSwitchDefault> N/A </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            Description
+          </div>
+          <div class="col-md-8">
+            : {{movie.description}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img class="imageClass pull-right" [src]="movie.photoPath" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel-footer" *ngIf="panelExpanded">
+    <button class="btn btn-primary" (click)="viewMovie()">View</button>
+    <button class="btn btn-primary" (click)="editMovie()">Edit</button>
+    <span *ngIf="confirmDelete">
+        <span>Are you sure you want to delete?</span>
+        <button class="btn btn-danger" (click)="deleteMovie()">Yes</button>
+        <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+    </span>
+    <span *ngIf="!confirmDelete">
+        <button class="btn btn-danger" (click)="confirmDelete=true">Delete</button>
+    </span>
+  </div>
+</div>
